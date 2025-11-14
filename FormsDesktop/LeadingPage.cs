@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FormsDesktop.Control;
 
 namespace FormsDesktop
 {
@@ -15,6 +16,8 @@ namespace FormsDesktop
         public LeadingPage()
         {
             InitializeComponent();
+            UsuarioControl control = new UsuarioControl();
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -25,7 +28,13 @@ namespace FormsDesktop
 
         private void LeadingPage_Load(object sender, EventArgs e)
         {
+            var uc = new UsuarioControl();
+            uc.Location = new Point(20, 20);
 
+            uc.EditarClick += (s, ev) => MessageBox.Show("EDITAR desde el Form");
+            uc.EliminarClick += (s, ev) => MessageBox.Show("ELIMINAR desde el Form");
+
+            Controls.Add(uc);
         }
 
         private void LeadingPage_Resize(object sender, EventArgs e)
