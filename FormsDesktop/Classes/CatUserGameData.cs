@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormsDesktop.Classes
 {
-    internal class CatUserGameData
+    public class CatUserGameData
     {
         public int GameTime { get; set; }
         public int Errors { get; set; }

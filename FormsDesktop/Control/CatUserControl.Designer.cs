@@ -1,6 +1,6 @@
 ﻿namespace FormsDesktop.Control
 {
-    partial class UsuarioControl
+    partial class CatUserControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -29,41 +29,46 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
+            panelDataGame = new Panel();
+            labelNombre = new Label();
+            labelEd = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             editarToolStripMenuItem = new ToolStripMenuItem();
             eliminarToolStripMenuItem = new ToolStripMenuItem();
-            button1 = new Button();
+            buttonEditar = new Button();
+            labelEdad = new Label();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelDataGame
             // 
-            panel1.Location = new Point(17, 138);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(400, 461);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            panelDataGame.AutoScroll = true;
+            panelDataGame.Location = new Point(17, 138);
+            panelDataGame.Name = "panelDataGame";
+            panelDataGame.Size = new Size(462, 461);
+            panelDataGame.TabIndex = 0;
             // 
-            // label1
+            // labelNombre
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(27, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            labelNombre.AutoSize = true;
+            labelNombre.FlatStyle = FlatStyle.Flat;
+            labelNombre.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            labelNombre.Location = new Point(27, 37);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Size = new Size(104, 41);
+            labelNombre.TabIndex = 1;
+            labelNombre.Text = "label1";
             // 
-            // label2
+            // labelEd
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(143, 37);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            labelEd.AutoSize = true;
+            labelEd.Font = new Font("Segoe UI", 12F);
+            labelEd.Location = new Point(27, 88);
+            labelEd.Name = "labelEd";
+            labelEd.Size = new Size(60, 28);
+            labelEd.TabIndex = 2;
+            labelEd.Text = "Edad:";
+            labelEd.Click += labelEdad_Click;
             // 
             // contextMenuStrip1
             // 
@@ -87,29 +92,44 @@
             eliminarToolStripMenuItem.Text = "Eliminar";
             eliminarToolStripMenuItem.Click += eliminarToolStripMenuItem_Click;
             // 
-            // button1
+            // buttonEditar
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(323, 28);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "...";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            buttonEditar.BackColor = SystemColors.ActiveCaption;
+            buttonEditar.FlatAppearance.BorderSize = 0;
+            buttonEditar.FlatStyle = FlatStyle.Flat;
+            buttonEditar.Font = new Font("Segoe UI", 20F);
+            buttonEditar.Location = new Point(419, 37);
+            buttonEditar.Name = "buttonEditar";
+            buttonEditar.Size = new Size(60, 63);
+            buttonEditar.TabIndex = 4;
+            buttonEditar.Text = "✏️";
+            buttonEditar.UseVisualStyleBackColor = false;
+            buttonEditar.Click += buttonEditar_Click;
+            // 
+            // labelEdad
+            // 
+            labelEdad.AutoSize = true;
+            labelEdad.Font = new Font("Segoe UI", 12F);
+            labelEdad.Location = new Point(93, 88);
+            labelEdad.Name = "labelEdad";
+            labelEdad.Size = new Size(42, 28);
+            labelEdad.TabIndex = 2;
+            labelEdad.Text = "olis";
             // 
             // UsuarioControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(panel1);
+            BackColor = Color.Red;
+            BorderStyle = BorderStyle.Fixed3D;
+            Controls.Add(buttonEditar);
+            Controls.Add(labelEdad);
+            Controls.Add(labelEd);
+            Controls.Add(labelNombre);
+            Controls.Add(panelDataGame);
+            Margin = new Padding(70, 40, 20, 20);
             Name = "UsuarioControl";
-            Size = new Size(442, 616);
+            Size = new Size(500, 612);
             contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -117,12 +137,13 @@
 
         #endregion
 
-        private Panel panel1;
-        private Label label1;
-        private Label label2;
+        private Panel panelDataGame;
+        private Label labelNombre;
+        private Label labelEd;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem eliminarToolStripMenuItem;
-        private Button button1;
+        private Button buttonEditar;
+        private Label labelEdad;
     }
 }

@@ -32,9 +32,15 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            panel1 = new Panel();
-            panel2 = new Panel();
+            panelDivisor1 = new Panel();
+            panelDivisor2 = new Panel();
+            panelSuperior = new FlowLayoutPanel();
+            flowLayoutPanelHeader = new FlowLayoutPanel();
+            button5 = new Button();
+            comboBoxOrdenar = new ComboBox();
+            comboBoxTipoJuegos = new ComboBox();
             flowLayoutPanel1.SuspendLayout();
+            flowLayoutPanelHeader.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -43,12 +49,11 @@
             flowLayoutPanel1.Controls.Add(button1);
             flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.Location = new Point(571, 857);
+            flowLayoutPanel1.Location = new Point(282, 833);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(243, 95);
+            flowLayoutPanel1.Size = new Size(400, 60);
             flowLayoutPanel1.TabIndex = 0;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // button1
             // 
@@ -60,7 +65,6 @@
             button1.Size = new Size(74, 87);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -84,24 +88,85 @@
             button3.TabIndex = 2;
             button3.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // panelDivisor1
             // 
-            panel1.BackColor = Color.White;
-            panel1.Location = new Point(14, 820);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1329, 13);
-            panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
+            panelDivisor1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelDivisor1.BackColor = Color.White;
+            panelDivisor1.Location = new Point(14, 820);
+            panelDivisor1.Margin = new Padding(3, 4, 3, 4);
+            panelDivisor1.Name = "panelDivisor1";
+            panelDivisor1.Size = new Size(1329, 13);
+            panelDivisor1.TabIndex = 1;
             // 
-            // panel2
+            // panelDivisor2
             // 
-            panel2.BackColor = Color.White;
-            panel2.Location = new Point(14, 960);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1329, 13);
-            panel2.TabIndex = 2;
+            panelDivisor2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelDivisor2.BackColor = Color.White;
+            panelDivisor2.Location = new Point(14, 960);
+            panelDivisor2.Margin = new Padding(3, 4, 3, 4);
+            panelDivisor2.Name = "panelDivisor2";
+            panelDivisor2.Size = new Size(1329, 13);
+            panelDivisor2.TabIndex = 2;
+            // 
+            // panelSuperior
+            // 
+            panelSuperior.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelSuperior.AutoScroll = true;
+            panelSuperior.BackColor = Color.FromArgb(255, 128, 0);
+            panelSuperior.Location = new Point(12, 95);
+            panelSuperior.Name = "panelSuperior";
+            panelSuperior.Size = new Size(1331, 706);
+            panelSuperior.TabIndex = 3;
+            // 
+            // flowLayoutPanelHeader
+            // 
+            flowLayoutPanelHeader.BackColor = Color.FromArgb(255, 128, 255);
+            flowLayoutPanelHeader.Controls.Add(button5);
+            flowLayoutPanelHeader.Controls.Add(comboBoxOrdenar);
+            flowLayoutPanelHeader.Controls.Add(comboBoxTipoJuegos);
+            flowLayoutPanelHeader.Dock = DockStyle.Top;
+            flowLayoutPanelHeader.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanelHeader.Location = new Point(0, 0);
+            flowLayoutPanelHeader.Name = "flowLayoutPanelHeader";
+            flowLayoutPanelHeader.Padding = new Padding(10);
+            flowLayoutPanelHeader.Size = new Size(1353, 50);
+            flowLayoutPanelHeader.TabIndex = 4;
+            flowLayoutPanelHeader.WrapContents = false;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(1236, 13);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 29);
+            button5.TabIndex = 1;
+            button5.Text = "button5";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxOrdenar
+            // 
+            comboBoxOrdenar.FlatStyle = FlatStyle.Popup;
+            comboBoxOrdenar.FormattingEnabled = true;
+            comboBoxOrdenar.Items.AddRange(new object[] { "Edad (as)", "Edad (des)", "Nombre (as)", "Nombre (des)", "Puntos (as)", "Puntos (des)" });
+            comboBoxOrdenar.Location = new Point(1079, 13);
+            comboBoxOrdenar.Name = "comboBoxOrdenar";
+            comboBoxOrdenar.Size = new Size(151, 28);
+            comboBoxOrdenar.TabIndex = 3;
+            comboBoxOrdenar.Text = "Ordenar por...";
+            comboBoxOrdenar.SelectedIndexChanged += comboBoxOrdenar_SelectedIndexChanged;
+            // 
+            // comboBoxTipoJuegos
+            // 
+            comboBoxTipoJuegos.AllowDrop = true;
+            comboBoxTipoJuegos.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTipoJuegos.FlatStyle = FlatStyle.Popup;
+            comboBoxTipoJuegos.FormattingEnabled = true;
+            comboBoxTipoJuegos.Items.AddRange(new object[] { "Gatito Cuentgotas", "Colorful Shapes" });
+            comboBoxTipoJuegos.Location = new Point(888, 13);
+            comboBoxTipoJuegos.Name = "comboBoxTipoJuegos";
+            comboBoxTipoJuegos.Size = new Size(185, 28);
+            comboBoxTipoJuegos.TabIndex = 2;
+            comboBoxTipoJuegos.Tag = "";
+            comboBoxTipoJuegos.SelectedIndexChanged += comboBoxTipoJuegos_SelectedIndexChanged;
             // 
             // LeadingPage
             // 
@@ -109,15 +174,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(36, 104, 156);
             ClientSize = new Size(1353, 1015);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(flowLayoutPanelHeader);
+            Controls.Add(panelSuperior);
+            Controls.Add(panelDivisor2);
+            Controls.Add(panelDivisor1);
             Controls.Add(flowLayoutPanel1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "LeadingPage";
             Text = "LeadingPage";
-            Load += LeadingPage_Load;
-            Resize += LeadingPage_Resize;
+            WindowState = FormWindowState.Maximized;
             flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanelHeader.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -127,7 +194,12 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Panel panel1;
-        private Panel panel2;
+        private Panel panelDivisor1;
+        private Panel panelDivisor2;
+        private FlowLayoutPanel panelSuperior;
+        private FlowLayoutPanel flowLayoutPanelHeader;
+        private Button button5;
+        private ComboBox comboBoxTipoJuegos;
+        private ComboBox comboBoxOrdenar;
     }
 }

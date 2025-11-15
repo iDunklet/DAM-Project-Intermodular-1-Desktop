@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FormsDesktop.Classes
 {
-    internal class CatUser
+    public class CatUser
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -15,7 +15,7 @@ namespace FormsDesktop.Classes
         public List<CatUserGameData> GameList { get; set; } = new List<CatUserGameData>();
 
         //Constructors
-        public CatUser(int age, string name = "", List<CatUserGameData> gameList = null)
+        public CatUser(int age, string name, List<CatUserGameData> gameList)
         {
             Age = age;
             Name = name;
